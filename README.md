@@ -8,10 +8,20 @@ Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with
 
 ## Releases (compatibility)
 
-* Version 8.9 from Sonarqube 8.9.0.43852 and above 
+* Version 1.0.0 from Sonarqube 8.9.0.43852 and above 
 
-STILL IN PROGESS (not everything is translated)
+## Installation
+
+```sh
+mvn clean package
+```
+
+Copy the building jar (or download the release) in your directory sonarqube/extensions/plugins
 
 ## License
 
 GNU LGPL 3
+
+
+STILL IN PROGESS (not everything is translated)
+
