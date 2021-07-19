@@ -22,6 +22,4 @@ Copy the building jar (or download the release) in your directory sonarqube/exte
 
 GNU LGPL 3
 
-
-STILL IN PROGESS (not everything is translated)
-
+:warning:️ **STILL IN PROGESS (not everything is translated) :warning:
