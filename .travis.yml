@@ -6,6 +6,9 @@ jdk: openjdk10
 script:
   - mvn verify -B -e -V
 
+after_success:
+  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent coveralls:report
+
 cache:
   directories:
     - '$HOME/.m2/repository'
