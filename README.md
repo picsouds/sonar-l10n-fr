@@ -1,5 +1,5 @@
 [![Build Status](https://www.travis-ci.com/picsouds/sonar-l10n-fr.svg?branch=main)](https://www.travis-ci.com/picsouds/sonar-l10n-fr)
-[![Coverage Status](https://coveralls.io/repos/github/picsouds/sonar-l10n-fr/badge.svg?branch=master)](https://coveralls.io/github/picsouds/sonar-l10n-fr?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/picsouds/sonar-l10n-fr/badge.svg)](https://coveralls.io/github/picsouds/sonar-l10n-fr)
 
 # French Pack for SonarQube 
 
