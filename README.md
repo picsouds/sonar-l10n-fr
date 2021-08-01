@@ -1,4 +1,5 @@
 [![Build Status](https://www.travis-ci.com/picsouds/sonar-l10n-fr.svg?branch=main)](https://www.travis-ci.com/picsouds/sonar-l10n-fr)
+[![Coverage Status](https://coveralls.io/repos/github/picsouds/sonar-l10n-fr/badge.svg?branch=master)](https://coveralls.io/github/picsouds/sonar-l10n-fr?branch=master)
 
 # French Pack for SonarQube 
 
@@ -8,7 +9,7 @@ Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with
 
 ## Releases (compatibility)
 
-* Version 1.0.0 from Sonarqube 8.9.0.43852 and above 
+* Version 1.0.1 from Sonarqube 8.9.0.43852 and above 
 
 ## Installation
 
@@ -22,4 +23,4 @@ Copy the building jar (or download the release) in your directory sonarqube/exte
 
 GNU LGPL 3
 
-:warning:️ **STILL IN PROGESS (not everything is translated) :warning:
+:warning:️ **STILL IN PROGESS (The most important is translated) :warning:

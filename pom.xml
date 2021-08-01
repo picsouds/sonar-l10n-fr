@@ -6,7 +6,7 @@
     <groupId>org.sonarqube.l10n.fr</groupId>
     <artifactId>sonar-l10n-fr-Plugin</artifactId>
     <packaging>sonar-plugin</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>L10n :: French Pack</name>
     <url>https://github.com/picsouds/sonar-l10n-fr</url>
@@ -108,7 +108,29 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.xml.bind</groupId>
+                        <artifactId>jaxb-api</artifactId>
+                        <version>2.3.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
 
         </plugins>
     </build>
