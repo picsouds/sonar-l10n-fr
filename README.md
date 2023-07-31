@@ -9,7 +9,8 @@ Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with
 
 ## Releases (compatibility)
 
-* Version 1.0.x from Sonarqube 8.9.0.43852 and above 
+* Version 1.0.x from Sonarqube 8.9.0.43852 and above
+* Version 2.0.x from Sonarqube 9.9.1.69595 and above
 
 ## Installation
 
