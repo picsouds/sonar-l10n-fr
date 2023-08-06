@@ -6,7 +6,7 @@
     <groupId>org.sonarqube.l10n.fr</groupId>
     <artifactId>sonar-l10n-fr-Plugin</artifactId>
     <packaging>sonar-plugin</packaging>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
 
     <name>L10n :: French Pack</name>
     <url>https://github.com/picsouds/sonar-l10n-fr</url>
