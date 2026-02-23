@@ -1,4 +1,7 @@
 [![Build Status](https://github.com/picsouds/sonar-l10n-fr/actions/workflows/main.yml/badge.svg)](https://github.com/picsouds/sonar-l10n-fr/actions/workflows/main.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/quality_gate?project=picsouds_sonar-l10n-fr)](https://sonarcloud.io/summary/new_code?id=picsouds_sonar-l10n-fr)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=picsouds_sonar-l10n-fr&metric=bugs)](https://sonarcloud.io/summary/new_code?id=picsouds_sonar-l10n-fr)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=picsouds_sonar-l10n-fr&metric=coverage)](https://sonarcloud.io/summary/new_code?id=picsouds_sonar-l10n-fr)
 
 # French Pack for SonarQube
 
