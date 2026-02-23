@@ -6,7 +6,7 @@
     <groupId>org.sonarqube.l10n.fr</groupId>
     <artifactId>sonar-l10n-fr-Plugin</artifactId>
     <packaging>sonar-plugin</packaging>
-    <version>2.0.2</version>
+    <version>25.1.0</version>
 
     <name>L10n :: French Pack</name>
     <url>https://github.com/picsouds/sonar-l10n-fr</url>
@@ -34,14 +34,14 @@
 
     <properties>
         <sonar.pluginClass>org.sonar.plugins.l10n.FrenchPackPlugin</sonar.pluginClass>
-        <sonar.version> 9.9.6.92038</sonar.version>
-        <sonar-plugin-api.version>9.14.0.375</sonar-plugin-api.version>
-        <junit.version>4.13.2</junit.version>
+        <sonar.version>25.1.0.102122</sonar.version>
+        <sonar-plugin-api.version>11.0.0.2664</sonar-plugin-api.version>
+        <junit.jupiter.version>5.11.0</junit.jupiter.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
 
     </properties>
 
@@ -63,27 +63,62 @@
             <artifactId>sonar-core</artifactId>
             <version>${sonar.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.sonarsource.sonarqube</groupId>
+                    <artifactId>sonar-sarif</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
     </dependencies>
 
+    <developers>
+        <developer>
+            <id>picsouds</id>
+            <name>picsouds</name>
+        </developer>
+    </developers>
+
     <build>
         <plugins>
             <plugin>
+                <groupId>io.github.git-commit-id</groupId>
+                <artifactId>git-commit-id-maven-plugin</artifactId>
+                <version>8.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
                 <artifactId>sonar-packaging-maven-plugin</artifactId>
-                <version>1.20.0.405</version>
+                <version>1.25.1.3002</version>
                 <extensions>true</extensions>
                 <configuration>
                     <pluginName>French Pack</pluginName>
                     <pluginDescription>Language pack for French</pluginDescription>
+                    <archive>
+                        <manifestEntries>
+                            <Implementation-Build>${git.commit.id}</Implementation-Build>
+                        </manifestEntries>
+                    </archive>
+                    <basePlugin>l10nen</basePlugin>
                 </configuration>
             </plugin>
 
@@ -103,7 +138,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.6</version>
+                <version>0.8.12</version>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
@@ -113,21 +148,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.3.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>javax.xml.bind</groupId>
-                        <artifactId>jaxb-api</artifactId>
-                        <version>2.3.1</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-
         </plugins>
     </build>
 
