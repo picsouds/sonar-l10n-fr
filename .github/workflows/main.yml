@@ -33,7 +33,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build and analyze
-        run: mvn verify -B -e -V
+        run:  mvn verify sonar:sonar -B -e -V
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Artifact JAR for release
         uses: actions/upload-artifact@v4
