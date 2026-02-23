@@ -36,6 +36,7 @@ jobs:
         run:  mvn verify sonar:sonar -B -e -V
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn verify -B -e -V
 
       - name: Artifact JAR for release
         uses: actions/upload-artifact@v4
