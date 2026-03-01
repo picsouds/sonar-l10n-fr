@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "org.sonarsource.api.plugin:sonar-plugin-api"
+      - dependency-name: "org.sonarsource.sonarqube:sonar-testing-harness"
+      - dependency-name: "org.sonarsource.sonarqube:sonar-core"
