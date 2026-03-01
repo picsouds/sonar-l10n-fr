@@ -6,6 +6,9 @@ on:
       - main
     tags:
       - '25.*'
+  pull_request:
+    branches:
+      - main      
 
 jobs:
   build:
