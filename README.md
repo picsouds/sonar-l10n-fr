@@ -23,6 +23,9 @@ Clone the repository and build the plugin JAR :
 mvn -B clean verify
 ```
 
+> [!CAUTION]
+> **Build requirements:** Maven 3.9.0 or later and Java 17 or later.
+
 ## 🐳 Quick Start with Docker
 
 A Docker Compose example is provided to run SonarQube 25.1 locally with this plugin (or others).
