@@ -28,7 +28,8 @@ jobs:
           java-version: 17
 
       - name: Set up Maven 3.9.16
-        uses: stCarolas/setup-maven@v5
+        # stCarolas/setup-maven@v5.1 , see https://github.com/stCarolas/setup-maven/releases/tag/v5.1
+        uses: stCarolas/setup-maven@12eb41b233df95d49b0c11fc1b5bc8312e5d4ce0
         with:
           maven-version: 3.9.16
 
