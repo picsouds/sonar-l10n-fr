@@ -5,7 +5,7 @@
 
 # French Pack for SonarQube
 
-This is the plugin to translate [SonarQube](http://www.sonarqube.org/) web application in French (Sonarqube 8.9 / 9.9 / 2025.x)
+This is the plugin to translate [SonarQube](http://www.sonarqube.org/) web application in French (Sonarqube 8.9 / 9.9 / 2025.x / 2026.x )
 
 Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with [sonar-l10n-zh](https://github.com/xuhuisheng/sonar-l10n-zh)
 
@@ -14,7 +14,8 @@ Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with
 * Version 1.0.x from Sonarqube 8.9.0.43852 and above
 * Version 2.0.x from Sonarqube 9.9.1.69595 and above
   * Version 2.0.2 from Sonarqube 9.9.6.92038 (backward compatibility ok)
-* Version 25.1.0 from SonarQube: 25.1.0.102122-community / 25.1.5-enterprise (and above)
+* Version 25.1.0 from SonarQube 25.1.0.102122-community / 25.1.5-enterprise (and above)
+* Version 26.9.0 from SonarQube 26.9.0.129388-community / 2026.4.1-developer (and above)
 
 ## Build the plugin locally
 
@@ -28,34 +29,34 @@ mvn -B clean verify
 
 ## 🐳 Quick Start with Docker
 
-A Docker Compose example is provided to run SonarQube 25.1 locally with this plugin (or others).
+A Docker Compose example is provided to run SonarQube 26.9 locally with this plugin (and others).
 
 ### Prerequisites
 - Docker & Docker Compose installed
 - docker-compose.yml
 ```yaml
 services:
-  sonarqube-25.1:
-    image: sonarqube:25.1.0.102122-community
+  sonarqube-26.9:
+    image: sonarqube:26.9.0.129388-community
     command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m
-    container_name: sonarqube25.1
+    container_name: sonarqube26.9
     depends_on:
-      - sonarqube_db_25.1
+      - sonarqube_db_26.9
     ports:
       - "9001:9000"
     networks:
       - sonar-net
     environment:
-      - SONAR_JDBC_URL=jdbc:postgresql://sonarqube_db_25.1:5432/sonar
+      - SONAR_JDBC_URL=jdbc:postgresql://sonarqube_db_26.9:5432/sonar
       - SONAR_JDBC_USERNAME=sonar
       - SONAR_JDBC_PASSWORD=sonar
     volumes:
       - ./plugins:/opt/sonarqube/extensions/plugins
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
-  sonarqube_db_25.1:
+  sonarqube_db_26.9:
     image: postgres:12.8
-    container_name: sonarqube_db_25.1
+    container_name: sonarqube_db_26.9
     ports:
       - "5433:5432"
     networks:
@@ -65,10 +66,10 @@ services:
       POSTGRES_PASSWORD: sonar
       POSTGRES_DB: sonar
     volumes:
-      - local_pgdata_sonarqube_db_25.1:/var/lib/postgresql/data
+      - local_pgdata_sonarqube_db_26.9:/var/lib/postgresql/data
 
 volumes:
-  local_pgdata_sonarqube_db_25.1:
+  local_pgdata_sonarqube_db_26.9:
 networks:
   sonar-net:
     external: false
