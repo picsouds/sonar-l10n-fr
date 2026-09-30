@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - '25.*'
+      - '26.*'
   pull_request:
     branches:
       - main
