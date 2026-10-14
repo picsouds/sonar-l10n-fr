@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
+      - sonarqube-24.12
     tags:
-      - '25.*'
-  pull_request:
-    branches:
-      - main      
+      - '24.*'
 
 jobs:
   build:
@@ -27,6 +25,12 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
+      - name: Set up Maven 3.9.16
+        # stCarolas/setup-maven@v5.1 , see https://github.com/stCarolas/setup-maven/releases/tag/v5.1
+        uses: stCarolas/setup-maven@12eb41b233df95d49b0c11fc1b5bc8312e5d4ce0
+        with:
+          maven-version: 3.9.16
+
       - name: Cache Maven packages
         uses: actions/cache@v4
         with:
@@ -35,9 +39,14 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build and analyze
-        run:  mvn verify sonar:sonar -B -e -V
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: mvn verify sonar:sonar -B -e -V
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build (tag, no Sonar analysis)
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: mvn verify -B -e -V
 
       - name: Artifact JAR for release
         uses: actions/upload-artifact@v4
@@ -105,4 +114,5 @@ jobs:
           body: ${{ env.CHANGELOG }}
           draft: false
           prerelease: false
+          make_latest: false
           files: ${{ steps.find_jar.outputs.jar_path }}

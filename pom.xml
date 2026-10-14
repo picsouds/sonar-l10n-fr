@@ -6,7 +6,7 @@
     <groupId>org.sonarqube.l10n.fr</groupId>
     <artifactId>sonar-l10n-fr-Plugin</artifactId>
     <packaging>sonar-plugin</packaging>
-    <version>25.1.0</version>
+    <version>24.12.0</version>
 
     <name>L10n :: French Pack</name>
     <url>https://github.com/picsouds/sonar-l10n-fr</url>
@@ -34,9 +34,9 @@
 
     <properties>
         <sonar.pluginClass>org.sonar.plugins.l10n.FrenchPackPlugin</sonar.pluginClass>
-        <sonar.version>25.1.0.102122</sonar.version>
-        <sonar-plugin-api.version>11.0.0.2664</sonar-plugin-api.version>
-        <junit.jupiter.version>6.0.3</junit.jupiter.version>
+        <sonar.version>24.12.0.100206</sonar.version>
+        <sonar-plugin-api.version>9.8.0.203</sonar-plugin-api.version>
+        <junit.jupiter.version>5.11.0</junit.jupiter.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
@@ -96,13 +96,13 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>5.5.0.6356</version>
+                <version>5.7.0.6970</version>
             </plugin>
 
             <plugin>
                 <groupId>io.github.git-commit-id</groupId>
                 <artifactId>git-commit-id-maven-plugin</artifactId>
-                <version>9.0.2</version>
+                <version>8.0.2</version>
                 <executions>
                     <execution>
                         <goals>
@@ -148,7 +148,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.14</version>
+                <version>0.8.12</version>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
