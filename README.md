@@ -15,7 +15,7 @@ Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with
 * Version 2.0.x from Sonarqube 9.9.1.69595 and above
   * Version 2.0.2 from Sonarqube 9.9.6.92038 (backward compatibility ok)
 * Version 25.1.0 from SonarQube 25.1.0.102122-community / 25.1.5-enterprise (and above)
-* Version 26.9.0 from SonarQube 26.9.0.129388-community / 2026.4.1-developer (and above)
+* Version 26.9.x from SonarQube 26.9.0.129388-community / 2026.4.1-developer (and above)
 
 ## Build the plugin locally
 
@@ -47,6 +47,9 @@ services:
     networks:
       - sonar-net
     environment:
+      - SONAR_WEB_JAVAOPTS=-server -Xms512m -Xmx1g -XX:+HeapDumpOnOutOfMemoryError
+      - SONAR_CE_JAVAOPTS=-Xms1g -Xmx1g -XX:+HeapDumpOnOutOfMemoryError
+      - SONAR_SEARCH_JAVAOPTS=-Xms1g -Xmx1g -XX:+HeapDumpOnOutOfMemoryError
       - SONAR_JDBC_URL=jdbc:postgresql://sonarqube_db_26.9:5432/sonar
       - SONAR_JDBC_USERNAME=sonar
       - SONAR_JDBC_PASSWORD=sonar

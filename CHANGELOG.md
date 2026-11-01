@@ -1,5 +1,11 @@
 # Changelog
 
+## 26.9.1
+Compatible SonarQube: 26.9.0.129388-community / 2026.4.1-developer (and above)
+
+- Traduction corrigée pour les règles FR
+- Rajout traduction bundle developer / enterprise
+
 ## 26.9.0
 Compatible SonarQube: 26.9.0.129388-community / 2026.4.1-developer (and above)
 
