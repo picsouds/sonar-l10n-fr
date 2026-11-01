@@ -11,7 +11,7 @@ Fork of [sonar-l10n-fr](https://github.com/ZoeThivet/sonar-l10n-fr) adapted with
 * Version 1.0.x from Sonarqube 8.9.0.43852 and above
 * Version 2.0.x from Sonarqube 9.9.1.69595 and above
   * Version 2.0.2 from Sonarqube 9.9.6.92038 (backward compatibility ok)
-* Version 24.12.0 from SonarQube: 24.12.0.100206-community (and above)
+* Version 24.12.x from SonarQube: 24.12.0.100206-community (and above)
 
 ## Build the plugin locally
 

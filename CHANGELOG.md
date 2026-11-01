@@ -1,5 +1,10 @@
 # Changelog
 
+## 24.12.1
+Compatible SonarQube: 24.12.0.100206-community
+
+- Traduction corrigée pour les règles FR
+
 ## 24.12.0
 Compatible SonarQube: 24.12.0.100206-community
 
